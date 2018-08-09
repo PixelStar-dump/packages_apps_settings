@@ -353,4 +353,7 @@
     <!-- Game Space -->
     <string name="game_space_title">Game Space</string>
     <string name="game_space_summary">Enhance your gaming experience</string>
+
+    <!-- About device screen, PixelStar Release Version -->
+    <string name="pixelstar_release_version">PixelStar Release
 </resources>
