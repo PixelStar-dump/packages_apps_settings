@@ -42,8 +42,8 @@ public class PixelStarVersionDetailPreferenceController extends BasePreferenceCo
     private static final String TAG = "PixelStarVersionDialogCtrl";
     private static final int DELAY_TIMER_MILLIS = 500;
     private static final int ACTIVITY_TRIGGER_COUNT = 3;
-
     private static final String KEY_PIXELSTAR_BUILD_VERSION_PROP = "org.pixelstar.build_version";
+    private static final String KEY_PIXELSTAR_CODENAME_VERSION_PROP = "org.pixelstar.codename";
     private static final String KEY_PIXELSTAR_DEVICE_PROP = "org.pixelstar.device";
     private static final String KEY_PIXELSTAR_RELEASE_TYPE_PROP = "org.pixelstar.build_type";
     private static final String KEY_PIXELSTAR_RELEASE_VERSION_PROP = "org.pixelstar.version.display";
@@ -127,11 +127,13 @@ public class PixelStarVersionDetailPreferenceController extends BasePreferenceCo
     private String shortRomVersion() {
         String romVersion = SystemProperties.get(KEY_PIXELSTAR_BUILD_VERSION_PROP,
                 this.mContext.getString(R.string.device_info_default));
+        String releaseVersion = SystemProperties.get(KEY_PIXELSTAR_CODENAME_VERSION_PROP,
+                this.mContext.getString(R.string.device_info_default));
         String deviceCodename = SystemProperties.get(KEY_PIXELSTAR_DEVICE_PROP,
                 this.mContext.getString(R.string.device_info_default));
         String romReleasetype = SystemProperties.get(KEY_PIXELSTAR_RELEASE_TYPE_PROP,
                 this.mContext.getString(R.string.device_info_default));
-        String shortVersion = romVersion + " | " + deviceCodename + " | " + romReleasetype;
+        String shortVersion = releaseVersion + " | " + romVersion + " | " + deviceCodename + " | " + romReleasetype;
         return shortVersion;
     }
 
